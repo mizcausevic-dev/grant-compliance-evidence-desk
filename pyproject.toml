@@ -1,0 +1,11 @@
+[project]
+name = "grant-compliance-evidence-desk"
+version = "0.1.0"
+description = "Nonprofit operator surface for grant evidence, reporting posture, and deliverable readiness."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "AGPL-3.0-or-later"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
