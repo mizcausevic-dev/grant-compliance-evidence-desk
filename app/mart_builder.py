@@ -236,6 +236,27 @@ def overview_html(data: dict[str, Any]) -> str:
         </table>
       </div>
     </section>
+    <section class="section">
+      <div class="sh"><h2>Board questions this answers</h2><div class="note">funder exposure · budget · narrative</div></div>
+      <div class="cards">
+        <div class="card"><div class="eyebrow">exposure</div><h3>Which grants are most likely to miss a funder commitment?</h3><p>Deliverable risk, evidence gaps, and readiness scores show where funder trust is exposed before a late report, thin packet, or amendment surprise reaches leadership.</p></div>
+        <div class="card"><div class="eyebrow">savings</div><h3>Where is evidence collection becoming duplicate work?</h3><p>The desk ties program metrics, finance notes, approvals, budget amendments, and deliverable proof together so grant teams do not rebuild the same packet every cycle.</p></div>
+        <div class="card"><div class="eyebrow">investment</div><h3>Which reporting control should be strengthened first?</h3><p>High-risk grants show whether finance support, program instrumentation, approval tracking, or funder narrative production deserves the next operating investment.</p></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="sh"><h2>Evidence model</h2><div class="note">signal · proof · decision</div></div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Signal</th><th>Owner</th><th>Required proof</th><th>Decision supported</th></tr></thead>
+          <tbody>
+            <tr><td><b>Deliverable readiness</b></td><td>Grant Manager</td><td>Requirement, due date, source artifact, reviewer, submission posture</td><td>Submit, hold, or escalate funder packet</td></tr>
+            <tr><td><b>Budget amendment pressure</b></td><td>Finance Lead</td><td>Variance note, board approval, funder communication, revised allocation</td><td>Approve amendment, reforecast, or contain spend</td></tr>
+            <tr><td><b>Program metric support</b></td><td>Program Owner</td><td>Metric definition, cohort source, delivery note, evidence attachment</td><td>Use, qualify, or repair impact narrative</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
     <section class="quote">
       <div class="lbl">why this matters</div>
       <div class="q">Kinetic Gain Embedded tie-back: this repo proves the portfolio can ship nonprofit funding operator surfaces where grant evidence, reporting cycles, and amendment readiness stay inspectable in one place instead of fragmenting across finance, programs, and development.</div>
