@@ -110,6 +110,15 @@ def base_css() -> str:
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px} @media (max-width:1000px){.cards{grid-template-columns:1fr}}
     .card h3{margin:8px 0 8px;font-size:22px}
     .card .eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--bert)}
+    .depth-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+    @media (max-width:900px){.depth-grid{grid-template-columns:1fr}}
+    .depth-card{border:1px solid rgba(25,199,255,.2);border-radius:18px;padding:18px;background:linear-gradient(135deg, rgba(11,18,32,.90), rgba(12,24,42,.68))}
+    .depth-card h3{margin:8px 0 8px;font-size:24px}
+    .depth-card ul{margin:12px 0 0;padding-left:18px;color:var(--muted);line-height:1.75}
+    .depth-card li::marker{color:var(--bert)}
+    .workflow{display:grid;gap:10px;margin-top:12px}
+    .step{border:1px solid var(--line2);border-radius:14px;padding:12px;background:rgba(6,10,18,.35)}
+    .step b{color:var(--text)}
     table{width:100%;border-collapse:collapse} th,td{padding:13px 14px;text-align:left;font-size:13.5px;vertical-align:top}
     thead th{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted2);border-bottom:1px solid var(--line);background:rgba(11,18,32,.5)}
     tbody td{color:var(--muted);border-bottom:1px solid var(--line2)} tbody tr:hover{background:rgba(55,255,139,.03)}
@@ -215,6 +224,38 @@ def overview_html(data: dict[str, Any]) -> str:
       </aside>
     </div>
     <section class="section">
+      <div class="sh"><h2>Product depth</h2><div class="note">what this actually does</div></div>
+      <div class="depth-grid">
+        <div class="depth-card">
+          <div class="eyebrow">executive intelligence surface</div>
+          <h3>Grant Compliance Evidence Desk turns funder reporting into a board-readable proof packet.</h3>
+          <p>It gives development, finance, program owners, and executive stakeholders one shared view of grant evidence before missing proof, budget amendments, deliverable drift, or reporting-window risk weakens funder trust.</p>
+          <ul>
+            <li>Non-technical leaders see which grants are exposed, who owns the next move, and what evidence is still missing.</li>
+            <li>Technical and operations teams see the data contract: grants, funders, evidence packets, reporting cycles, and derived readiness marts.</li>
+            <li>go-to-market teams can explain a clear product story: proof reuse, reporting confidence, and lower funder-risk drag.</li>
+          </ul>
+        </div>
+        <div class="depth-card">
+          <div class="eyebrow">operating workflow</div>
+          <h3>From scattered grant follow-up to one review lane.</h3>
+          <div class="workflow">
+            <div class="step"><b>1. Model the portfolio.</b><br>Load synthetic grants, funders, reporting cycles, owners, and evidence packets into SQLite.</div>
+            <div class="step"><b>2. Score the risk.</b><br>Compute readiness, evidence gaps, deliverable pressure, and reporting posture in local marts.</div>
+            <div class="step"><b>3. Route the decision.</b><br>Publish a static evidence desk that shows what to submit, repair, escalate, or hold.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="sh"><h2>What these repos have in common</h2><div class="note">control plane pattern</div></div>
+      <div class="cards">
+        <div class="card"><div class="eyebrow">same product spine</div><h3>Risk, owner, proof, and next action.</h3><p>Each Kinetic Gain surface turns a messy operating lane into a simple decision model leaders can inspect without needing the source system open.</p></div>
+        <div class="card"><div class="eyebrow">safe evidence packaging</div><h3>Representative data, no live secrets.</h3><p>The repo proves the workflow with local-first sample data and static outputs, so the public surface is useful without exposing funder, donor, beneficiary, credential, or production records.</p></div>
+        <div class="card"><div class="eyebrow">buyer-readable GTM</div><h3>Business value and technical proof stay together.</h3><p>The page is not only a demo. It frames the operational pain, the evidence model, the decision workflow, and the commercial story in one scannable product artifact.</p></div>
+      </div>
+    </section>
+    <section class="section">
       <div class="sh"><h2>Desk KPIs</h2><div class="note">nonprofit grant snapshot</div></div>
       <div class="kpis">
         <div class="kpi"><div class="v green">{data['grant_count']}</div><div class="lbl">tracked grants</div><div class="h">Funding lanes mapped into one evidence and reporting control surface.</div></div>
@@ -263,7 +304,7 @@ def overview_html(data: dict[str, Any]) -> str:
     </section>
     <footer>
       <span>grant-compliance-evidence-desk · Python evidence mart + static operator surface</span>
-      <span><a href="/docs/">Docs</a> · <a href="/verification/">Verification</a></span>
+      <span><a href="/docs/">Docs</a> · <a href="/verification/">Verification</a> · <a href="https://github.com/mizcausevic-dev/grant-compliance-evidence-desk">Repo</a> · <a href="https://portfolio.kineticgain.com/">Portfolio</a> · <a href="https://suite.kineticgain.com/">Suite</a> · <a href="https://www.linkedin.com/in/miz-causevic/">LinkedIn</a> · <a href="https://kineticgain.com/">Kinetic Gain</a></span>
     </footer>
     """
 
